@@ -1,6 +1,7 @@
 import { UnknownGroupError } from './errors';
 import Log from './log';
 import { LEVEL } from './typing/level';
+import { Logger } from './typing/logger';
 
 interface IOption {
   immediate?: boolean;
@@ -24,13 +25,6 @@ const LogLevelToNum = {
 };
 
 const DEFAULT_GROUP = 'default';
-
-interface Logger {
-  debug(msg: string, group: string): void;
-  info(msg: string, group: string): void;
-  warn(msg: string, group: string): void;
-  error(msg: string, group: string): void;
-}
 
 class LazyLogger implements Logger {
   private options: Required<IOption>;
