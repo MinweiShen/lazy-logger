@@ -4,21 +4,21 @@ describe('LazyLogger', () => {
   it('can add a group', () => {
     const logger = new LazyLogger();
     logger.addGroup('test');
-    expect(logger.getGroups()).toEqual(['default', 'test']);
+    expect(logger.getGroupNames()).toEqual(['_default_', 'test']);
   });
 
   it('can delete a group', () => {
     const logger = new LazyLogger();
     logger.addGroup('test');
-    expect(logger.getGroups()).toEqual(['default', 'test']);
+    expect(logger.getGroupNames()).toEqual(['_default_', 'test']);
     logger.deleteGroup('test');
-    expect(logger.getGroups()).toEqual(['default']);
+    expect(logger.getGroupNames()).toEqual(['_default_']);
   });
 
   it('can not delete the default group', () => {
     const logger = new LazyLogger();
-    logger.deleteGroup('default');
-    expect(logger.getGroups()).toEqual(['default']);
+    logger.deleteGroup('_default_');
+    expect(logger.getGroupNames()).toEqual(['_default_']);
   });
 
   it('can add log to the default group', () => {
