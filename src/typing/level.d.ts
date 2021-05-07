@@ -1,1 +1,7 @@
-export type LEVEL = 'debug' | 'info' | 'warn' | 'error';
+export enum LogLevel {
+  DEBUG,
+  INFO,
+  WARN,
+  ERROR
+}
+export type LEVEL = Lowercase<keyof typeof LogLevel>;

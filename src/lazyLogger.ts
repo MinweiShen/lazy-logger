@@ -20,7 +20,7 @@ const defaultOptions: Required<IOption> = {
   collect: true, // TODO
 };
 
-const LogLevelToNum = {
+const LogLevelToNum: Record<LEVEL, number> = {
   debug: 3,
   info: 2,
   warn: 1,

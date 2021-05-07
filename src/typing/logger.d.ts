@@ -1,4 +1,4 @@
-export interface Logger {
+export interface Logger {  
   debug(msg: string, group: string): void;
   info(msg: string, group: string): void;
   warn(msg: string, group: string): void;
